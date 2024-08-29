@@ -1,0 +1,50 @@
+def calculate_bmi(weight, height):
+    if height <= 0:
+        return None
+    return weight / (height ** 2)
+
+def determine_diet_status(bmi):
+    if bmi is None:
+        return "Invalid BMI calculation"
+    if bmi < 18.5:
+        return "Red: Underweight"
+    elif 18.5 <= bmi < 24.9:
+        return "Green: Sufficient consumption"
+    elif 25 <= bmi < 29.9:
+        return "Orange: Needs more intake"
+    else:
+        return "Red: Underweight"
+
+def manage_student_grades():
+
+#     students = {
+#         'student1': {'name': 'lava', 'class': '10', 'height': 1.72, 'weight': 75, 'sport': 'Basketball'},
+#         'student2': {'name': 'Aryan', 'class': '10', 'height': 1.78, 'weight': 90, 'sport': 'crcket'},
+#         'student3': {'name': 'Harshit', 'class': '10', 'height': 1.70, 'weight': 85, 'sport': 'Gym'},
+ 
+#     }
+#     for student_info in students.items():
+#         name = student_info['name']
+#         height = student_info['height']
+#         weight = student_info['weight']
+#         sport = student_info['sport']
+#         classs = student_info['class']
+
+        name = 'lava'
+        height = 1.72 
+        weight = 75
+        sport = 'basketball'
+
+
+        bmi = calculate_bmi(weight, height)
+        diet_status = determine_diet_status(bmi)
+        
+        print(f"Student: {name}")
+#         print(f"Class: {classs}")
+        print(f"Height: {height} meters")
+        print(f"Weight: {weight} kg")
+        print(f"Sport: {sport}")
+        print(f"BMI: {bmi}" if bmi is not None else "BMI: Calculation Error")
+        print(f"Diet Status: {diet_status}")
+        
+manage_student_grades()
